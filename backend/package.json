@@ -1,0 +1,9 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Simple backend for Jenkins + Nginx lab",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
