@@ -24,12 +24,14 @@ pipeline {
                 sh '''
                 docker rm -f nginx-lb || true
                 
+                sleep 3
                 docker run -d \
                   --name nginx-lb \
                   --network app-network \
                   -p 80:80 \
                   nginx
                 
+                sleep 2
                 docker cp CC_LAB-6/nginx/default.conf nginx-lb:/etc/nginx/conf.d/default.conf
                 docker exec nginx-lb nginx -s reload
                 '''
